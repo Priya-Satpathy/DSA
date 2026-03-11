@@ -4,7 +4,7 @@
 #include<stdio.h>
 int main()
 {
-    int a[100], i, size, min=0,minSecond=0;
+    int a[100], i, size, min=0,minSecond;
     
 
     printf("Write the total numbers you want to add: ");
@@ -26,17 +26,18 @@ int main()
 	   }
       
     }
-  
+  	  minSecond = 9999;   // important
+
    	  // Find second minimum
     for(i = 0; i < size; i++)
     {
-        if(a[i] > min  &&  a[i] != minSecond)
+          if(a[i] > min && a[i] < minSecond)
         {
             minSecond = a[i];
         }
     }
 
-   	  printf("Minimum is = %d\n",min);
+   	printf("Minimum is = %d\n",min);
     printf("Second Minimum is = %d",minSecond);
 
 
